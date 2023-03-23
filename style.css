@@ -1,0 +1,477 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap");
+
+:root {
+  --font: "Open Sans", sans-serif;
+}
+
+html[data-theme="light"] {
+  --color-primary: #fafdff;
+  --color-secondary: #0a2b37;
+  --color-accent: #25b3e8;
+  --invert: invert(0);
+}
+
+html[data-theme="dark"] {
+  --color-primary: #0a2b37;
+  --color-secondary: #fafdff;
+  --color-accent: #25b3e8;
+  --invert: invert(1);
+}
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: 9999px;
+  width: 52px;
+  height: 27px;
+  background: var(--color-primary);
+  float: right;
+  border-radius: 1rem;
+  position: relative;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: var(--color-accent);
+  border-radius: 90px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+input:checked + label {
+  background: var(--color-primary);
+}
+
+input:checked + label:after {
+  left: calc(100% - 4px);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 45px;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-family: var(--font);
+  font-weight: 300;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-secondary);
+  font-family: var(--font);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  color: var(--color-primary);
+  font-size: 3rem;
+  line-height: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  color: var(--color-primary);
+  font-size: 1rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-accent);
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* UI Elements */
+button {
+  display: inline-block;
+  height: 3rem;
+  padding: 1rem 2rem;
+  border: none;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--color-secondary);
+  color: var(--color-accent);
+  cursor: pointer;
+}
+button:hover {
+  text-decoration: underline;
+}
+
+.dark_button {
+  color: var(--color-accent);
+}
+
+input[type="text"] {
+  border-radius: 1rem;
+  box-sizing: border-box;
+  width: 250px;
+  height: 3rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  text-align: left;
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+/* Menu */
+nav {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-secondary);
+}
+
+nav a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+nav a.logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0px 1rem;
+}
+
+nav button {
+  color: var(--color-accent);
+  background-color: var(--color-primary);
+}
+
+/* Header */
+header {
+  display: flex;
+  min-height: 80vh;
+  padding: 5rem;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: var(--color-secondary);
+}
+
+header p {
+  color: var(--color-primary);
+}
+
+header button {
+  margin-bottom: 3rem;
+}
+
+.header_text {
+  width: 30vw;
+  min-width: 300px;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.header_graphics {
+  width: 25vw;
+  height: 25vw;
+  min-width: 250px;
+  min-height: 250px;
+  border-radius: 250px;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  padding: 3rem;
+}
+.header_graphics object {
+  width: 100%;
+  height: 100%;
+}
+
+.header_graphics object svg path {
+  fill: var(--color-accent);
+}
+
+/* product section */
+#product {
+  padding: 5rem 3rem;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+#product h2 {
+  color: var(--color-primary);
+}
+
+#product h3 {
+  color: var(--color-primary);
+}
+
+#product a {
+  color: var(--color-accent);
+}
+
+#product article {
+  display: flex;
+  min-height: 50vh;
+  padding: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#product article:first-child {
+  min-height: 40vh;
+}
+
+.product_text {
+  width: 50vw;
+  min-width: 300px;
+  color: var(--color-primary);
+}
+
+#product article:first-child .product_text {
+  width: 75vw;
+  min-width: 300px;
+  color: var(--color-primary);
+}
+
+.product_graphics {
+  min-width: 150px;
+  min-height: 150px;
+  padding: 1rem;
+  margin: 3rem;
+  background-color: var(--color-primary);
+  color: var(--color-primary);
+  border-radius: 300px;
+}
+.product_graphics object {
+  width: 100%;
+  height: 100%;
+  filter: var(--invert);
+}
+
+/* highlight sections */
+.highlight {
+  display: flex;
+  min-height: 70vh;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+.highlight div {
+  width: 80vw;
+}
+
+.highlight div h2 {
+  font-size: 5.005rem;
+  line-height: 6rem;
+}
+
+.dark {
+  background-color: var(--color-secondary);
+}
+
+.dark h2 {
+  color: var(--color-primary);
+}
+
+.dark a {
+  color: var(--color-accent);
+  background-color: var(--color-primary);
+}
+
+/* request section */
+#request {
+  display: flex;
+  min-height: 50vh;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color-primary);
+}
+
+#request p {
+  color: var(--color-secondary);
+}
+
+#request div {
+  width: 50vw;
+  min-width: 300px;
+}
+
+#request input {
+  border: 1px solid var(--color-secondary);
+}
+
+#request button {
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+}
+
+/* Footer */
+footer {
+  display: flex;
+  padding: 5vh 2rem;
+  align-items: top;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+footer h2,
+footer h3 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+footer a {
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+}
+
+footer section.left {
+  display: flex;
+  align-items: top;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+footer section div {
+  margin: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 0.9em;
+  }
+
+  #product h2 {
+    font-size: 1.953rem;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+  }
+  .highlight div h2 {
+    font-size: 3.052rem;
+    line-height: 3.5rem;
+  }
+}
+
+/*ANIMATIONS */
+
+.rocket {
+  filter: var(--invert);
+  transition: transform 2s linear; /* Add a smooth transition effect */
+}
+
+.rocket:hover {
+  animation: fly-up 2s; /* Start the shake animation on hover */
+}
+
+@keyframes fly-up {
+  0% {
+    transform: translate(0, 0) rotate(0deg); /* Start with no movement */
+  }
+  20% {
+    transform: translate(0, -10px) rotate(-5deg); /* Move up and rotate */
+  }
+  40% {
+    transform: translate(0, -25px) rotate(5deg); /* Move up and rotate */
+  }
+  60% {
+    transform: translate(0, -60px) rotate(-6deg); /* Move up more and rotate more */
+  }
+  80% {
+    scale: 1.05;
+    transform: translate(0, -100px) rotate(11deg); /* Move up more and rotate more */
+  }
+  100% {
+    transform: translate(0, 0px) rotate(0deg); /* Move up more and rotate more */
+  }
+}
+
+.productSVG {
+  transition: transform 2s linear; /* Add a smooth transition effect */
+}
+
+.productSVG:hover {
+  animation: rotate 2s infinite; /* Start the shake animation on hover */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); /* Start with no movement */
+  }
+  20% {
+    transform: rotate(60deg); /* Move up and rotate */
+  }
+  40% {
+    transform: rotate(110deg); /* Move up and rotate */
+  }
+  60% {
+    transform: rotate(250deg); /* Move up more and rotate more */
+  }
+  80% {
+    transform: rotate(300deg); /* Move up more and rotate more */
+  }
+  100% {
+    transform: rotate(360deg); /* Move up more and rotate more */
+  }
+}
+
+.productSVG2 {
+  transition: transform 2s linear; /* Add a smooth transition effect */
+}
+
+.productSVG2:hover {
+  animation: hover 2s; /* Start the shake animation on hover */
+}
+
+@keyframes hover {
+  0% {
+    transform: translate(0, 0px); /* Start with no movement */
+  }
+  50% {
+    transform: translate(0, -10px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
